@@ -110,6 +110,11 @@ return [
      *  The id of the Google Calendar that will be used by default.
      */
     'calendar_id' => env('GOOGLE_CALENDAR_ID'),
+
+    /*
+     *  The email address of the user account to impersonate.
+     */
+    'user_to_impersonate' => env('GOOGLE_CALENDAR_IMPERSONATE'),
 ];
 
 ```
@@ -175,6 +180,8 @@ php artisan vendor:publish --provider="Spatie\GoogleCalendar\GoogleCalendarServi
 ```
 
 Finally, for a more seamless experience in your application, instead of using the quickstart tool you can set up a consent screen in the [Google API console](https://console.developers.google.com/apis). This would allow non-technical users of your application to easily generate their own tokens. This is completely optional.
+
+If you have delegated domain-wide access to the service account and you want to impersonate a user account, specify the email address of the user account in the config file.
 
 ## Usage
 
